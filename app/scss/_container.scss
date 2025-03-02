@@ -1,203 +1,387 @@
 .container {
-  width: 60vw;
-  height: 90vh;
+  width: 100vw;
 
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-  grid-template-areas:
-    "cp sa sa sh"
-    "cp sa sa sh"
-    "cp sa sa sh"
-    "cp sa sa sh"
-    "cp ma mn sh"
-    "ca ma mn sh"
-    "ca ma mn sh"
-    "ca ag gf gf"
-    "ca ag gf gf"
-    "ca ag gf gf";
-  gap: 1rem;
-
-  > * {
-    border-radius: 0.3rem;
-  }
-  .createPost {
-    background-color: $Yellow100;
-    grid-area: cp;
-    padding: 2rem 1rem 2rem 2rem;
-
-    div {
-      // width: 40%;
-      text-align: left;
-      font-size: $mid;
-      word-break: keep-all;
-      line-height: 0.8;
-
-      span {
-        font-style: italic;
-        color: $Purple500;
-      }
-    }
-
-    img {
-      width: 77%;
-      height: 32%;
-      margin: 1rem 1rem 0 0.5rem;
-    }
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .socialAi {
-    background-color: $Purple500;
-    color: $White;
-    grid-area: sa;
+  &_grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.5rem 1rem;
 
-    div {
-      font-size: 40px;
-      max-width: 80%;
-      text-align: center;
-      font-size: 4rem;
-      span {
-        color: $Yellow500;
-      }
+    @media (min-width: 768px) {
+      max-width: 1024px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 296px 227px 214px;
+      grid-template-areas:
+        "cardgrp sa sa sh"
+        "cardgrp ma ms sh"
+        "cardgrp ag gf gf ";
+      gap: 1rem;
     }
-
-    img {
-      width: 30%;
-    }
-  }
-
-  .schedule {
-    grid-area: sh;
-    background-color: $Purple100;
-    position: relative;
-    // justify-content: space-around;
-    // gap: 18rem;
-    overflow: hidden;
-
-    div {
-      margin: 1.5rem 0 1.5rem 1rem;
-      font-size: $mid;
-      width: 70%;
-      text-align: left;
-      word-break: keep-all;
-      line-height: 0.8;
-    }
-
-    img {
-      position: absolute;
-      width: 100%;
-      height: 60%;
-      left: 40%;
-      object-fit: fill;
-      align-self: center;
-    }
-
-    p {
-      font-size: $small;
-      width: 75%;
-      text-align: left;
-      word-break: keep-all;
-      line-height: 0.8;
-    }
-  }
-
-  .contentAI {
-    grid-area: ca;
-    background-color: $Yellow500;
-    // overflow: hidden;
-    padding: 2rem 1rem 1rem 1rem;
-
-    p {
-      max-width: 70%;
-      text-align: left;
-      font-size: $mid;
-      word-break: keep-all;
-      line-height: 0.8;
-      align-self: flex-start;
-      padding: 2rem 0 2rem 2rem;
-    }
-
-    img {
-      width: 80%;
-      height: 70%;
-      object-fit: contain;
-    }
-  }
-
-  .manageAccount {
-    grid-area: ma;
-    background-color: $White;
-    // border: 1px solid black;
-    overflow: hidden;
-    align-self: center;
-    padding: 1rem;
 
     img {
       width: 100%;
-      height: 70%;
-      object-fit: scale-down;
-      object-position: top 0 left 2rem;
+    }
+
+    .cards {
       margin-bottom: 1rem;
+      border-radius: 0.5rem;
+      padding: 2rem 0.6rem;
+
+      @media (max-width: 768px) {
+        max-width: 372px;
+      }
+
+      @media (min-width: 768px) {
+        margin-bottom: 0;
+      }
     }
 
-    p {
-      font-size: $mid;
-      width: 80%;
-      line-height: 0.8;
-      margin: 1rem;
-    }
-  }
+    #card1 {
+      grid-area: sa;
+      @media (min-width: 768px) {
+        padding-top: 3rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      & > :first-child {
+        font-size: $xl;
+        text-align: center;
+        margin-bottom: 1rem;
+        line-height: 0.9;
 
-  .maintain {
-    grid-area: mn;
-    background-color: $Yellow500;
-    overflow: hidden;
-    align-self: center;
-    padding: 1rem 1rem 0 1rem;
+        @media (min-width: 768px) {
+          font-size: 3rem;
+        }
 
-    p {
-      // margin: -0.4rem;
-      width: 70%;
-      font-size: $mid;
-      line-height: 0.8;
-    }
+        & > :first-child {
+          color: $Yellow500;
+        }
 
-    img {
-      width: 70%;
-      object-fit: cover;
-      object-position: 0 3.5rem;
-    }
-  }
+        & > :last-child {
+          font-style: italic;
+        }
+      }
 
-  .audGrowth {
-    grid-area: ag;
-    background-color: $White;
+      img {
+        width: 60%;
 
-    div {
-      font-size: $xl;
-    }
+        @media (min-width: 768px) {
+          width: 40%;
+          margin-top: 1rem;
+          margin-bottom: 0.5rem;
+        }
+      }
 
-    p {
-      font-size: $small;
-    }
-
-    img {
-      width: 70%;
-    }
-  }
-
-  .growFollower {
-    grid-area: gf;
-    background-color: $Purple500;
-
-    img {
-      width: 35%;
+      p {
+        font-size: $small;
+        @media (min-width: 768px) {
+          font-weight: 100;
+        }
+      }
     }
 
-    div {
-      font-size: $lar;
-      line-height: 0.8;
+    #card2 {
+      grid-area: ma;
+      @media (min-width: 768px) {
+        position: relative;
+        padding-right: 0;
+        overflow: hidden;
+      }
+      p {
+        margin-top: 1rem;
+        font-size: $mid;
+        line-height: 0.9;
+        word-spacing: -4px;
+
+        @media (min-width: 768px) {
+          padding-left: 1.2rem;
+          padding-right: 1rem;
+          font-size: $smmid;
+          word-break: keep-all;
+          font-weight: 500;
+        }
+      }
+
+      img {
+        @media (min-width: 768px) {
+          width: 110%;
+          height: 30%;
+          object-fit: fill;
+          object-position: 32px center;
+        }
+      }
+    }
+
+    #card3 {
+      height: 300px;
+      overflow: hidden;
+      grid-area: ms;
+
+      @media (min-width: 768px) {
+        height: auto;
+        padding-top: 1.5rem;
+        padding-left: 1.2rem;
+      }
+
+      p {
+        font-size: $mid;
+        line-height: 0.9;
+        word-spacing: -4px;
+        margin-bottom: 1rem;
+        @media (min-width: 768px) {
+          font-size: $smmid;
+          fw: 500;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      .card3Img {
+        background-image: url(assets/images/illustration-consistent-schedule.webp);
+        width: 70%;
+        height: 100%;
+        border-radius: 16px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top 10px center;
+
+        @media (min-width: 768px) {
+          width: 94%;
+          height: 66%;
+          background-size: cover;
+          background-position: top 6px center;
+        }
+      }
+    }
+
+    #card4 {
+      text-align: center;
+      grid-area: sh;
+
+      @media (min-width: 768px) {
+        position: relative;
+        overflow: hidden;
+        justify-content: space-around;
+        gap: 18rem;
+        padding-top: 2rem;
+        padding-bottom: 0;
+      }
+
+      div {
+        font-size: $mid;
+        word-spacing: -4px;
+
+        @media (min-width: 768px) {
+          font-size: $smmid;
+          font-weight: 500;
+          line-height: 0.8;
+          text-align: left;
+          margin-left: 1.5rem;
+        }
+      }
+
+      img {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        @media (min-width: 768px) {
+          position: absolute;
+          height: 55%;
+          width: 130%;
+          left: 16%;
+          top: 15%;
+        }
+      }
+
+      p {
+        font-size: $small;
+        max-width: 80%;
+
+        @media (min-width: 768px) {
+          max-height: 17%;
+          font-size: 1.05rem;
+          text-align: left;
+          margin-left: 1.5rem;
+          line-height: 1;
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    #card5 {
+      grid-area: gf;
+
+      @media (min-width: 768px) {
+        flex-wrap: wrap;
+      }
+
+      img {
+        width: 70%;
+        margin-bottom: 1rem;
+
+        @media (min-width: 768px) {
+          width: 40%;
+          padding-left: 1rem;
+        }
+      }
+
+      p {
+        margin-top: 1rem;
+        width: 80%;
+        font-size: $lar;
+        text-align: center;
+
+        @media (min-width: 768px) {
+          font-size: $mid;
+          width: 55%;
+          text-align: left;
+          margin-left: 1rem;
+          line-height: 0.9;
+          margin-top: 2rem;
+        }
+      }
+    }
+
+    #card6 {
+      padding-left: 2rem;
+      grid-area: ag;
+
+      @media (min-width: 768px) {
+        padding: 1.5rem 1rem;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        justify-items: center;
+      }
+      div {
+        font-size: $xl;
+
+        @media (min-width: 768px) {
+          justify-self: start;
+          font-size: $lar;
+          font-weight: 500;
+        }
+      }
+
+      p {
+        font-size: $small;
+
+        @media (min-width: 768px) {
+          margin-top: 0.5rem;
+          font-size: 1rem;
+        }
+      }
+
+      img {
+        margin-top: 1rem;
+        width: 70%;
+
+        @media (min-width: 768px) {
+          width: 80%;
+        }
+      }
+    }
+
+    #card7 {
+      padding-left: 2rem;
+      padding-bottom: 3rem;
+      flex: 1;
+
+      @media (min-width: 768px) {
+        padding: 5rem 2rem 2rem;
+      }
+      div {
+        font-size: $lar;
+        line-height: 0.8;
+
+        @media (min-width: 768px) {
+          font-size: $mid;
+          font-weight: 500;
+        }
+
+        span {
+          color: $Purple500;
+          font-style: italic;
+        }
+      }
+
+      img {
+        width: 50%;
+        height: 80%;
+        object-fit: contain;
+
+        @media (min-width: 768px) {
+          margin-top: 1.5rem;
+          height: 30%;
+          width: 100%;
+        }
+      }
+    }
+
+    #card8 {
+      padding-left: 2rem;
+      flex: 1;
+
+      p {
+        font-size: $lar;
+        line-height: 0.8;
+        margin-bottom: 1.5rem;
+
+        @media (min-width: 768px) {
+          font-size: $mid;
+          font-weight: 500;
+        }
+      }
+
+      img {
+        width: 70%;
+
+        @media (min-width: 768px) {
+          margin-top: 4rem;
+          width: 100%;
+        }
+      }
+    }
+
+    .cardsGroup {
+      grid-area: cardgrp;
+
+      @media (min-width: 764px) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+
+    #card1,
+    #card5 {
+      background-color: $Purple500;
       color: $White;
+    }
+
+    #card2,
+    #card6 {
+      background-color: $White;
+      color: $Black;
+    }
+
+    #card3,
+    #card8 {
+      background-color: $Yellow500;
+      color: $Black;
+    }
+
+    #card4 {
+      background-color: $Purple100;
+    }
+
+    #card7 {
+      background-color: $Yellow100;
     }
   }
 }
