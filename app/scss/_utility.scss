@@ -1,0 +1,19 @@
+.flex {
+  display: flex;
+
+  &-fd-c {
+    flex-direction: column;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+
+  &-jc-se {
+    justify-content: space-evenly;
+  }
+}

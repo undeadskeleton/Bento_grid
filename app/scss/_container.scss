@@ -1,0 +1,203 @@
+.container {
+  width: 60vw;
+  height: 90vh;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-areas:
+    "cp sa sa sh"
+    "cp sa sa sh"
+    "cp sa sa sh"
+    "cp sa sa sh"
+    "cp ma mn sh"
+    "ca ma mn sh"
+    "ca ma mn sh"
+    "ca ag gf gf"
+    "ca ag gf gf"
+    "ca ag gf gf";
+  gap: 1rem;
+
+  > * {
+    border-radius: 0.3rem;
+  }
+  .createPost {
+    background-color: $Yellow100;
+    grid-area: cp;
+    padding: 2rem 1rem 2rem 2rem;
+
+    div {
+      // width: 40%;
+      text-align: left;
+      font-size: $mid;
+      word-break: keep-all;
+      line-height: 0.8;
+
+      span {
+        font-style: italic;
+        color: $Purple500;
+      }
+    }
+
+    img {
+      width: 77%;
+      height: 32%;
+      margin: 1rem 1rem 0 0.5rem;
+    }
+  }
+
+  .socialAi {
+    background-color: $Purple500;
+    color: $White;
+    grid-area: sa;
+
+    div {
+      font-size: 40px;
+      max-width: 80%;
+      text-align: center;
+      font-size: 4rem;
+      span {
+        color: $Yellow500;
+      }
+    }
+
+    img {
+      width: 30%;
+    }
+  }
+
+  .schedule {
+    grid-area: sh;
+    background-color: $Purple100;
+    position: relative;
+    // justify-content: space-around;
+    // gap: 18rem;
+    overflow: hidden;
+
+    div {
+      margin: 1.5rem 0 1.5rem 1rem;
+      font-size: $mid;
+      width: 70%;
+      text-align: left;
+      word-break: keep-all;
+      line-height: 0.8;
+    }
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 60%;
+      left: 40%;
+      object-fit: fill;
+      align-self: center;
+    }
+
+    p {
+      font-size: $small;
+      width: 75%;
+      text-align: left;
+      word-break: keep-all;
+      line-height: 0.8;
+    }
+  }
+
+  .contentAI {
+    grid-area: ca;
+    background-color: $Yellow500;
+    // overflow: hidden;
+    padding: 2rem 1rem 1rem 1rem;
+
+    p {
+      max-width: 70%;
+      text-align: left;
+      font-size: $mid;
+      word-break: keep-all;
+      line-height: 0.8;
+      align-self: flex-start;
+      padding: 2rem 0 2rem 2rem;
+    }
+
+    img {
+      width: 80%;
+      height: 70%;
+      object-fit: contain;
+    }
+  }
+
+  .manageAccount {
+    grid-area: ma;
+    background-color: $White;
+    // border: 1px solid black;
+    overflow: hidden;
+    align-self: center;
+    padding: 1rem;
+
+    img {
+      width: 100%;
+      height: 70%;
+      object-fit: scale-down;
+      object-position: top 0 left 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: $mid;
+      width: 80%;
+      line-height: 0.8;
+      margin: 1rem;
+    }
+  }
+
+  .maintain {
+    grid-area: mn;
+    background-color: $Yellow500;
+    overflow: hidden;
+    align-self: center;
+    padding: 1rem 1rem 0 1rem;
+
+    p {
+      // margin: -0.4rem;
+      width: 70%;
+      font-size: $mid;
+      line-height: 0.8;
+    }
+
+    img {
+      width: 70%;
+      object-fit: cover;
+      object-position: 0 3.5rem;
+    }
+  }
+
+  .audGrowth {
+    grid-area: ag;
+    background-color: $White;
+
+    div {
+      font-size: $xl;
+    }
+
+    p {
+      font-size: $small;
+    }
+
+    img {
+      width: 70%;
+    }
+  }
+
+  .growFollower {
+    grid-area: gf;
+    background-color: $Purple500;
+
+    img {
+      width: 35%;
+    }
+
+    div {
+      font-size: $lar;
+      line-height: 0.8;
+      color: $White;
+    }
+  }
+}
